@@ -21,7 +21,7 @@ export const putDb = async (content) => {
   const store = tx.objectStore('jate');
   const request = store.put({ id: 1, value: content });
   const result = await request;
-  console.log('Success', result.value);
+  console.log('Success', result);
 }
 
 // TODO: Add logic for a method that gets all the content from the database
@@ -33,7 +33,7 @@ const tx = jateDb.transaction('jate', 'readonly');
 const store = tx.objectStore('jate');
 const request = store.get(1);
 const result = await request;
-result ? console.log('Success', result.value) : console.log('No data');
+result ? console.log('Success', result) : console.log('No data');
 
 return result?.value;
 
